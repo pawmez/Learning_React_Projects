@@ -8,6 +8,17 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [tours, setTours] = useState([]);
 
+  const fetchTours = async () => {
+    setLoading(true) //extra precaution so that it always start with "Loading..."
+    const response = await fetch(url)
+    const tours = await response.json();
+    console.log(tours)
+  };
+  
+  useEffect(() => {
+    fetchTours();
+  },[])
+
   if(loading){
      return (
      <main>
@@ -19,6 +30,6 @@ function App() {
   return <main>
       <Tours />
   </main>
-}
+};
 
 export default App

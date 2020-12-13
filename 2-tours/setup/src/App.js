@@ -10,9 +10,18 @@ function App() {
 
   const fetchTours = async () => {
     setLoading(true) //extra precaution so that it always start with "Loading..."
+
+    try {
     const response = await fetch(url)
     const tours = await response.json();
-    console.log(tours)
+    setLoading(false)
+    setTours(tours)
+    } catch (error) {
+      setLoading(false)
+      console.log(error)
+    }
+    
+    
   };
   
   useEffect(() => {

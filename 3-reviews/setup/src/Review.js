@@ -43,9 +43,13 @@ const Review = () => {
   }
 
 const randomPerson = () => {
-  // let number = getRandomIntInclusive(0, people.length-1)
-  // console.log(number)
-  return setIndex(getRandomIntInclusive(0, people.length-1))
+  // from course -> let randomNumber = Math.floor(Math.random()*people.length);
+  let randomNumber = getRandomIntInclusive(0, people.length-1) 
+  // making sure that the random number doesn't repeat itself
+  if (randomNumber === index) {
+    randomNumber = index + 1;
+  }
+  return setIndex(checkNumber(randomNumber))
 }
 
   return <article className="review">

@@ -15,7 +15,7 @@
 #### useEffect and Conditional Rendering
 
 - [x] 2. Tours
-- [ ] 3. Reviews
+- [x] 3. Reviews
 - [ ] 4. Questions
 - [ ] 5. Menu
 - [ ] 6. Tabs

@@ -9,7 +9,9 @@ const {id, title, info} = data[index];
 
   return <main className="container">
     <div>
-      <Question />  
+      {data.map((question) => {
+        return <Question key={question.id} {...question}/>  
+      })}      
     </div>
       
     </main>;

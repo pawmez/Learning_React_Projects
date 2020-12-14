@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-const Question = (title, info) => {
+const Question = ({title, info}) => {
   const [outline, setOutline] = useState(false)
   return <main>
     <div className="question">

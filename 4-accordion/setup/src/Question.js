@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 const Question = ({title, info}) => {
   const [outline, setOutline] = useState(false)
-  return <main>
-    <div className="question">
+  return <article className="question">    
+      <header>
       <h4>{title}</h4>
-      <p>{info}</p>
+      
       <button className="btn" onClick={() => setOutline(!outline)}>
-        {outline ? AiOutlinePlus : AiOutlineMinus}
+        {outline ? <AiOutlineMinus /> : <AiOutlinePlus />}
         </button>
-    </div>
-    </main>;
+        </header>   
+        {outline && <p>{info}</p>}     
+    </article>;
 };
 
 export default Question;

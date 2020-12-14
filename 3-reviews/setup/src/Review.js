@@ -16,6 +16,12 @@ const Review = () => {
     return number
   }
 
+  function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min); 
+}
+
   const nextPerson = () => {
     setIndex((index) => {
       let newIndex = index + 1;
@@ -36,6 +42,12 @@ const Review = () => {
     })
   }
 
+const randomPerson = () => {
+  // let number = getRandomIntInclusive(0, people.length-1)
+  // console.log(number)
+  return setIndex(getRandomIntInclusive(0, people.length-1))
+}
+
   return <article className="review">
     <div className="img-container">
       <img src={image} alt={name} className="person-img"/>
@@ -54,7 +66,7 @@ const Review = () => {
         <FaChevronRight />
       </button>      
     </div>
-    <button className="random-btn">
+    <button className="random-btn" onClick={randomPerson}>        
         surprise me
       </button>
   </article>;

@@ -1,10 +1,30 @@
 import React, { useState } from 'react';
 import people from './data';
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
-
+console.log(people.length)
 const Review = () => {
   const [index,setIndex] = useState(0);
   const {name, job, image, text} = people[index];
+
+  const nextPerson = () => {
+    setIndex((index) => {
+      let newIndex = index + 1;
+      if (newIndex == people.length) {
+        newIndex = 0;
+      }      
+      return newIndex
+    })
+  }
+
+  const prevPerson = () => {
+    setIndex((index) => {
+      let newIndex = index - 1;
+      if (newIndex == -1) {
+        newIndex = people.length-1;
+      }
+      return newIndex
+    })
+  }
 
   return <article className="review">
     <div className="img-container">
@@ -17,10 +37,10 @@ const Review = () => {
     <p className="job">{job}</p>
     <p className="info">{text}</p>
     <div className="button-container">
-      <button className="prev-btn">
+      <button className="prev-btn" onClick={prevPerson}>
         <FaChevronLeft />
       </button>
-      <button className="next-btn">
+      <button className="next-btn" onClick={nextPerson}>
         <FaChevronRight />
       </button>      
     </div>

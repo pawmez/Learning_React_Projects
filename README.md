@@ -18,7 +18,7 @@
 - [x] 3. Reviews
 - [x] 4. Questions
 - [x] 5. Menu
-- [ ] 6. Tabs
+- [x] 6. Tabs
 - [ ] 7. Slider
 
 #### Forms

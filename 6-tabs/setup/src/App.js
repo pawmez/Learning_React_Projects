@@ -8,17 +8,14 @@ const url = 'https://course-api.com/react-tabs-project'
 function App() {
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0);  
 
-  const fetchJobs = async () => { 
-    setLoading(true) //extra precaution so that it always start with "Loading..."
-
+  const fetchJobs = async () => {     
     try {
     const response = await fetch(url)
-    const newJobs = await response.json();
+    const newJobs = await response.json();      
+    setJobs(newJobs)      
     setLoading(false)
-    setJobs(newJobs)
-    //console.log(newJobs)
     } catch (error) {
       setLoading(false)
       console.log(error)
@@ -29,7 +26,8 @@ function App() {
     fetchJobs();
   },[])
 
-  
+   
+
   if(loading){
     return (
       <section className="section loading">
@@ -38,11 +36,25 @@ function App() {
     );
   }
 
+  
+  const { company, dates, duties, title } = jobs[value];
+  
   return (
-  <main>
-        
-  </main>
-  )
+  <section className="section">
+        <div className="title">
+          <h2>experience</h2>
+          <div className="underline"></div>
+        </div>
+        <div className="jobs-center">
+          {/* btn container */}
+          {/* job info */}
+          <article className="job-info">
+            <h3>{title}</h3>
+
+          </article>
+        </div>
+  </section>
+  );
 }
 
 export default App

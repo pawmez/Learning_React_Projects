@@ -16,11 +16,17 @@ function App() {
     <div className="section-center">
       {people.map((person, personIndex) => {
         const {id, image, name, title, quote} = person;
-        // placeholder
+        // By default, position slides on the right hand side
         let position = 'nextSlide'
+        // Position in the center
         if(personIndex === index){
           position = 'activeSlide'
         }
+        // Slide on the left: either with index -1 or if 0, the last one in array 
+        if(personIndex === index -1 || (index === 0 && personIndex === people.length - 1)) {
+          position = 'lastSlide'
+        }
+
         return (
         <article className={position} key={id}>
           <img src={image} alt={name} className="person-img"/>
@@ -32,10 +38,10 @@ function App() {
         );
       })}
       <button className="prev">
-        <FiChevronLeft />
+        <FiChevronLeft onClick={()=> setIndex(index - 1)}/>
       </button>
       <button className="next">
-        <FiChevronRight />
+        <FiChevronRight onClick={()=> setIndex(index + 1)}/>
       </button>
     </div>    
   </section>

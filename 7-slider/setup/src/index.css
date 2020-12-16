@@ -162,7 +162,7 @@ Slider
   text-align: center;
   position: relative;
   display: flex; /* positinos elements in one row */
-  overflow: hidden;
+  overflow: hidden; /* hide slides to the right*/
 }
 .person-img {
   border-radius: 50%;

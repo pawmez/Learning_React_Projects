@@ -6,6 +6,22 @@ function App() {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = useState(0);  
 
+  const addIndex = (number) => {
+    number = number + 1
+    if(number >= people.length){
+      number = 0
+    }
+    return number
+  }
+
+  const subtractIndex = (number) => {
+    number = number - 1
+    if(number < 0){
+      number = people.length - 1
+    }
+    return number
+  }
+
   return (
   <section className="section">
     <div className="title">
@@ -22,8 +38,8 @@ function App() {
         if(personIndex === index){
           position = 'activeSlide'
         }
-        // Slide on the left: either with index -1 or if 0, the last one in array 
-        if(personIndex === index -1 || (index === 0 && personIndex === people.length - 1)) {
+        // Slide on the left: either with index -1 ORa if 0, the last one in array 
+        if(personIndex === index - 1 || (index === 0 && personIndex === people.length - 1)) {
           position = 'lastSlide'
         }
 
@@ -38,10 +54,10 @@ function App() {
         );
       })}
       <button className="prev">
-        <FiChevronLeft onClick={()=> setIndex(index - 1)}/>
+        <FiChevronLeft onClick={()=> setIndex(subtractIndex(index))}/>
       </button>
       <button className="next">
-        <FiChevronRight onClick={()=> setIndex(index + 1)}/>
+        <FiChevronRight onClick={()=> setIndex(addIndex(index))}/>
       </button>
     </div>    
   </section>

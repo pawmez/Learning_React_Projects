@@ -6,6 +6,7 @@ function App() {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = useState(0);  
 
+  // Alternative index control
   // useEffect(() => {
   //   const lastIndex = people.length - 1;
   //   if (index < 0) {
@@ -15,6 +16,14 @@ function App() {
   //     setIndex(0);
   //   }
   // },[index,people])
+
+  // Time interval
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex(addIndex(index));
+    }, 3000);
+    return () => clearInterval(slider) // important to clear!
+  },[index])
 
   const addIndex = (number) => {
     number = number + 1

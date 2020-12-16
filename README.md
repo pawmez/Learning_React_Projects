@@ -19,7 +19,7 @@
 - [x] 4. Questions
 - [x] 5. Menu
 - [x] 6. Tabs
-- [ ] 7. Slider
+- [x] 7. Slider
 
 #### Forms
 

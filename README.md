@@ -23,7 +23,7 @@
 
 #### Forms
 
-- [ ] 8. Lorem Ipsum Generator
+- [x] 8. Lorem Ipsum Generator
 - [ ] 9. Color Shades Generator
 - [ ] 10. Grocery Bud
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import SingleColor from './SingleColor'
 
-import Values from 'values.js'
+import Values from 'values.js' // API 
 
 function App() {
   const [color, setColor] = useState('');
@@ -9,8 +9,14 @@ function App() {
   const [list, setList] = useState([]);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("hello world");
+    e.preventDefault();    
+    try {
+    let colors = new Values(color).all(10);
+    } catch (error) {
+      setError(true)
+      console.log(error);
+    }
+    
   }
 
   return (
@@ -23,6 +29,7 @@ function App() {
         value={color} 
         onChange={(e)=> setColor(e.target.value)}
         placeholder="#f15025"
+        className={`${error?'error':null}`}
         />
         <button className="btn" type="submit">submit</button>
       </form>

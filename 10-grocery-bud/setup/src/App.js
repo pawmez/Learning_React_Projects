@@ -18,7 +18,8 @@ function App() {
   }
 
   const clearItems = () => {
-
+    showAlert(true,'danger','empty list')
+    setList([])
   }
 
    const handleSubmit = (e) => {

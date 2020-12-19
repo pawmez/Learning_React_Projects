@@ -24,7 +24,7 @@
 #### Forms
 
 - [x] 8. Lorem Ipsum Generator
-- [ ] 9. Color Shades Generator
+- [x] 9. Color Shades Generator
 - [ ] 10. Grocery Bud
 
 #### useRef

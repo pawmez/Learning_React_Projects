@@ -22,7 +22,7 @@ function App() {
     } else {
       // add item
       const newItem = {id: new Date().getTime().toString(), title:name};
-      setList([...List, newItem]);
+      setList([...list, newItem]);
       setName('');
     }
   }

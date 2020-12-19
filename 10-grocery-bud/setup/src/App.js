@@ -40,7 +40,17 @@ function App() {
       // display alert
       showAlert(true, 'danger', 'please enter value')
     } else if (name && isEditing){
-      //deal with edit
+      //edit
+      setList(list.map((item) => {
+        if(item.id === editID){
+          return {...item,title:name}
+        }
+        return item
+      }))
+      setName('')
+      SetEditID(null)
+      setIsEditing(false)
+      showAlert(true,'success', 'value changed')
     } else {
       showAlert(true, 'success', 'item added to the list')
       const newItem = {id: new Date().getTime().toString(), title:name};

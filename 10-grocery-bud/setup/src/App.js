@@ -10,15 +10,38 @@ function App() {
   const [alert, setAlert] = useState({show:false, msg:'',type:''});
 
   const clearItems = () => {
-    
+
   }
 
-  return <section className="section-center">
+   const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("handleSubmit hello")
+  }
+
+  return (
+  <section className="section-center">
+    <form className="grocery-form" onSubmit={handleSubmit}>
+      {alert.show && <Alert />}
+      <h3>grocery bud</h3>
+      <div className="form-control">
+        <input 
+        type="text" 
+        className="grocery" 
+        placeholder="eg. eggs" 
+        value={name} 
+        onChange={(e)=>setName(e.target.value)}
+        />
+        <button className="submit-btn" type="submit">
+          {isEditing?'edit':'submit'}
+        </button>
+      </div>
+    </form>
     <div className="grocery-container">
       <List />
       <button className="clear-btn" onClick={clearItems}>clear items</button>
     </div>
     </section>
+  );
 }
 
 export default App

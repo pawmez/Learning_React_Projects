@@ -12,6 +12,10 @@ function App() {
     msg:'',
     type:''
   });
+  
+  const showAlert = (show=false, type="",msg="") => {
+    setAlert({show,type,msg}) //ES6 syntax = show:show
+  }
 
   const clearItems = () => {
 
@@ -21,6 +25,7 @@ function App() {
     e.preventDefault();
     if(!name){
       // display alert
+      showAlert(true, 'danger', 'please enter value')
     } else if (name && isEditing){
       //deal with edit
     } else {

@@ -20,7 +20,10 @@ function App() {
     } else if (name && isEditing){
       //deal with edit
     } else {
-      // add item 
+      // add item
+      const newItem = {id: new Date().getTime().toString(), title:name};
+      setList([...List, newItem]);
+      setName('');
     }
   }
 

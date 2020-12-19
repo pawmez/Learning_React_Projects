@@ -7,7 +7,11 @@ function App() {
   const [list, setList] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
   const [editID, SetEditID] = useState(null);
-  const [alert, setAlert] = useState({show:true, msg:'testing alert',type:'success'});
+  const [alert, setAlert] = useState({
+    show:false, 
+    msg:'',
+    type:''
+  });
 
   const clearItems = () => {
 

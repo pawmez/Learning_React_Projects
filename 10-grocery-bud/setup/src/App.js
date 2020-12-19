@@ -15,7 +15,13 @@ function App() {
 
    const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("handleSubmit hello")
+    if(!name){
+      // display alert
+    } else if (name && isEditing){
+      //deal with edit
+    } else {
+      // add item 
+    }
   }
 
   return (

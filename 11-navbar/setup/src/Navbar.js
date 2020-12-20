@@ -8,7 +8,15 @@ const Navbar = () => {
   const linksContainerRef = useRef(null);
   const linksRef = useRef(null);
 
-  
+  useEffect(() => {
+    const linksHeight = linksRef.current.getBoundingClientRect().height; //checking the height
+    // console.log(linksHeight) check the console for an object!
+    if(showLinks){
+      linksContainerRef.current.style.height = `${linksHeight}px`
+    } else {
+      linksContainerRef.current.style.height = '0px'
+    }
+  },[showLinks])
 
   return <nav>
     <div className="nav-center">

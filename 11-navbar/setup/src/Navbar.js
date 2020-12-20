@@ -14,8 +14,8 @@ const Navbar = () => {
           <FaBars />
         </button>
       </div>
-      {showLinks && (
-      <div className="links-container show-container">
+      
+      <div className={`links-container${showLinks ? " show-container" : ""}`}>
         <ul className="links">
           {links.map((link) => {
             const {id, url, text} = link; //destructure
@@ -27,7 +27,7 @@ const Navbar = () => {
           })}
         </ul>
       </div>
-      )}      
+           
       <ul className="social-icons">
         {social.map((soc) => {
           const {id, url, icon} = soc;

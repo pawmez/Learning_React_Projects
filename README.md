@@ -1,3 +1,5 @@
+20.12.2020 - switched to https://github.com/pawmez/Learning_React_Projects.git
+
 #### Tutorial Video
 
 (React Tutorial)[https://youtu.be/iZhV0bILFb0]

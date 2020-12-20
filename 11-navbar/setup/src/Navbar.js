@@ -5,6 +5,10 @@ import logo from './logo.svg'
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
+  const linksContainerRef = useRef(null);
+  const linksRef = useRef(null);
+
+  
 
   return <nav>
     <div className="nav-center">
@@ -15,8 +19,8 @@ const Navbar = () => {
         </button>
       </div>
       
-      <div className={`links-container${showLinks ? " show-container" : ""}`}>
-        <ul className="links">
+      <div className="links-container" ref={linksContainerRef}>
+        <ul className="links" ref={linksRef}>
           {links.map((link) => {
             const {id, url, text} = link; //destructure
             return (

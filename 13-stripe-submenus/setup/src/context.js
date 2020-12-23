@@ -22,7 +22,9 @@ const AppProvider = ({children}) => {
         setIsSubmenuOpen(false);
     }
 
-    return <AppContext.Provider>
+    return <AppContext.Provider value={{
+        isSubmenuOpen, isSidebarOpen, openSubmenu, openSidebar, closeSubmenu, closeSidebar
+    }}>
         {children}
     </AppContext.Provider>
 }

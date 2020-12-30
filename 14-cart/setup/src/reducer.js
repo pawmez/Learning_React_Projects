@@ -1,4 +1,3 @@
-
 const reducer = (state, action) => {
     if(action.type === 'CLEAR_CART'){        
         return {
@@ -21,6 +20,25 @@ const reducer = (state, action) => {
                     amount: item.amount + 1
                 }
             };
+            return item
+        })        
+        return {
+            ...state,
+            cart: tempCart
+        }        
+    }
+    if(action.type === 'DECREASE'){
+        let tempCart = state.cart.map((item) => {
+            if(item.id === action.payload){
+                if(item.amount > 1) {
+                return {
+                    ...item,
+                    amount: item.amount - 1
+                    };
+                } else {
+                    action.type = 'REMOVE_ITEM'
+                }
+            }
             return item
         })        
         return {

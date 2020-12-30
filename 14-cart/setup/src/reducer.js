@@ -29,18 +29,15 @@ const reducer = (state, action) => {
     }
     if(action.type === 'DECREASE'){
         let tempCart = state.cart.map((item) => {
-            if(item.id === action.payload){
-                if(item.amount > 1) {
+            if(item.id === action.payload){               
                 return {
                     ...item,
                     amount: item.amount - 1
-                    };
-                } else {
-                    action.type = 'REMOVE_ITEM'
-                }
+                    };               
             }
             return item
-        })        
+        })
+        .filter((item) => item.amount !== 0)        
         return {
             ...state,
             cart: tempCart

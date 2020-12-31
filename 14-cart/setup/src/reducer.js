@@ -45,7 +45,6 @@ const reducer = (state, action) => {
     }
 
 if(action.type === 'GET_TOTAL'){
-
     let {total, amount} = state.cart.reduce((cartTotal, item) => {
         const {amount, price} = item;
         cartTotal.amount += amount
@@ -61,10 +60,21 @@ if(action.type === 'GET_TOTAL'){
         total,
         amount
     }
+}   
+if(action.type === 'LOADING'){
+    return {
+        ...state,
+        loading:true
+}    
 }
-    
-
-    return state
+if(action.type === 'DISPLAY_ITEMS'){
+    return {
+        ...state,
+        cart:action.payload,
+        loading:false
+    }
+}
+return state
 }
         
 

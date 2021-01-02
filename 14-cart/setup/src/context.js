@@ -32,8 +32,8 @@ const AppProvider = ({ children }) => {
     dispatch({type: 'DECREASE', payload:id})
   }
 
-  const changeAmount = (id, add) => {
-    dispatch({type: 'CHANGE_AMOUNT', payload:id, change:add})
+  const changeAmount = (id, type) => {
+    dispatch({type: 'CHANGE_AMOUNT', payload:{id, type}})
   }
 
   const fetchData = async () => {

@@ -15,8 +15,8 @@ const reducer = (state, action) => {
    
     if(action.type === 'CHANGE_AMOUNT'){
         let tempCart = state.cart.map((item) => {
-            if(item.id === action.payload){
-                if(action.change){
+            if(item.id === action.payload.id){
+                if(action.payload.type){
                     return {
                     ...item,
                     amount: item.amount + 1

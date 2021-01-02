@@ -40,7 +40,7 @@
 
 #### useReducer and useContext
 
-- [ ] 14. Cart
+- [x] 14. Cart
 
 #### React Router and useCallback
 

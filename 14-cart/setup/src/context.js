@@ -32,6 +32,10 @@ const AppProvider = ({ children }) => {
     dispatch({type: 'DECREASE', payload:id})
   }
 
+  const changeAmount = (id, add) => {
+    dispatch({type: 'CHANGE_AMOUNT', payload:id, add})
+  }
+
   const fetchData = async () => {
     dispatch({type: 'LOADING'});
     const response = await fetch(url);
@@ -55,6 +59,7 @@ const AppProvider = ({ children }) => {
         removeItem,
         increase,
         decrease,
+        changeAmount
       }}
     >
       {children}

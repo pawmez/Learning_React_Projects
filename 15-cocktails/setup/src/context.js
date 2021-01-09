@@ -11,8 +11,7 @@ const [cocktails, setCocktails] = useState([]);
 
   return <AppContext.Provider 
   value={{
-    loading,
-    searchTerm,
+    loading,    
     cocktails,
     setSearchTerm
   }}

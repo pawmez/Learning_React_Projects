@@ -44,7 +44,7 @@
 
 #### React Router and useCallback
 
-- [ ] 15. Cocktails
+- [x] 15. Cocktails
 
 ## Advanced Projects
 

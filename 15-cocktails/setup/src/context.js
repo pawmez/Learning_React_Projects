@@ -33,7 +33,7 @@ const fetchDrinks = async () => {
           glass:strGlass
         }
       })
-
+      setCocktails(newCocktails)
     } else {
       setCocktails([]);
     }

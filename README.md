@@ -52,7 +52,7 @@ Course Exclusive
 [Course Link](https://www.udemy.com/course/react-tutorial-and-projects-course/?couponCode=REACT-OCT)
 
 - [x] 16. Markdown Preview
-- [ ] 17. Random Person
+- [x] 17. Random Person
 - [ ] 18. Pagination
 - [ ] 19. Stock Photos
 - [ ] 20. Dark Mode

@@ -20,7 +20,16 @@ function App() {
   }
 
 
-  return <h2>random user starter</h2>
+  return <main>
+    <div className="block bcg-black"></div>
+    <div className="block">
+      <div className="container">
+        <img src={(person && person.image) || defaultImage} alt="random user" className="user-img"/>
+        <p className="user-title">m {title} is</p>
+        <p className="user-value">{value}</p>
+      </div>
+    </div>
+  </main>
 }
 
 export default App

@@ -23,6 +23,11 @@ function App() {
     const {large:image} = person.picture
     const {login:{password}} = person; //1 methond to destructure an object
     const {first, last} = person.name; //2 methond to destructure an object
+    const {age} = person.dob;
+    const {number, name} = person.location.street;
+    const newPerson = {
+      
+    }
   }
 
   useEffect(() => {

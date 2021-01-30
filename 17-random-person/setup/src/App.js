@@ -36,7 +36,9 @@ function App() {
     }
 
     setPerson(newPerson);
-    setLoading(false)
+    setLoading(false);
+    setTitle('name')
+    setValue(newPerson.name)
   }
 
   useEffect(() => {

@@ -27,6 +27,15 @@ function App() {
         <img src={(person && person.image) || defaultImage} alt="random user" className="user-img"/>
         <p className="user-title">m {title} is</p>
         <p className="user-value">{value}</p>
+        <div className="values-list">
+          <button 
+          className="icon" 
+          data-label="name" 
+          onMouseOver={handleValue}
+          >
+            <FaUser />
+          </button>
+        </div>
       </div>
     </div>
   </main>

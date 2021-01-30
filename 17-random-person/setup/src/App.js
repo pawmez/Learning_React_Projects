@@ -26,8 +26,17 @@ function App() {
     const {age} = person.dob;
     const {number, name} = person.location.street;
     const newPerson = {
-      
+      image,
+      phone,
+      email,
+      password,
+      age,
+      street:`${number} ${name}`,
+      name:`${first} ${last}`
     }
+
+    setPerson(newPerson);
+    setLoading(false)
   }
 
   useEffect(() => {

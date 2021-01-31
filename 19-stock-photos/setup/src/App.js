@@ -18,7 +18,8 @@ function App() {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data);
+      setPhotos(data);
+      setLoading(false);
     } catch (err) {
       setLoading(false);
       console.log(err);

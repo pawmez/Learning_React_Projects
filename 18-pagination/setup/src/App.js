@@ -15,6 +15,13 @@ function App() {
     setPage(index)
   }
 
+  const prevPage = () => {
+    setPage(page - 1)
+  }
+  const nextPage = () => {
+    setPage(page + 1)
+  }
+
   return <main>
     <div className="section-title">
       <h1>{loading ? 'loading...':'pagination'}</h1>
@@ -28,7 +35,9 @@ function App() {
       </div>
       {/* Conditional render, so that buttons container shows up when loading is finished */}
       {!loading && 
-        <div className="btn-container">{
+        <div className="btn-container">
+          <button className="prev-btn" onClick={prevPage}>prev</button>
+          {
           data.map((item, index) => {
             return <button key={index}
              className={`page-btn${index === page ? ' active-btn' : ''}`}
@@ -36,7 +45,9 @@ function App() {
                 {index+1}
                 </button>
           })
-          }</div>
+          }
+          <button className="next-btn" onClick={nextPage}>next</button>
+          </div>
         }
       
     </section>

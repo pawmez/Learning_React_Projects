@@ -23,6 +23,15 @@ function App() {
           return <Follower key={follower.id} {...follower}/>
         })}
       </div>
+      {/* Conditional render, so that buttons container shows up when loading is finished */}
+      {!loading && 
+        <div className="btn-container">{
+          data.map((item, index) => {
+            return <button key={index} className="page-btn">0</button>
+          })
+          }</div>
+        }
+      
     </section>
     </main>
 }

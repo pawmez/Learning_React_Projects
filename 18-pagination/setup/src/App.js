@@ -16,12 +16,25 @@ function App() {
   }
 
   const prevPage = () => {
-    setPage(page - 1)
-  }
-  const nextPage = () => {
-    setPage(page + 1)
-  }
+    setPage((oldPage) => {
+      let prevPage = oldPage - 1;
+      if (prevPage < 0) {
+        prevPage = data.length - 1
+      }
+      return prevPage
+     })
+    }
 
+    const nextPage = () => {
+    setPage((oldPage) => {
+      let nextPage = oldPage + 1;
+      if (nextPage > data.length - 1) {
+        nextPage = 0
+      }
+      return nextPage
+     })
+    } 
+  
   return <main>
     <div className="section-title">
       <h1>{loading ? 'loading...':'pagination'}</h1>

@@ -29,7 +29,13 @@ function App() {
       const response = await fetch(url);
       const data = await response.json();
       setPhotos((oldPhotos) => {
+        //search query returns a different array! check console
+        //console.log(data)
+        if (query) {
+          return [...oldPhotos, ...data.results]
+        } else {
         return [...oldPhotos, ...data]
+        }
       });
       setLoading(false);
     } catch (err) {
@@ -61,7 +67,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("hello");
+    fetchImages();
   }
 
   return <main>

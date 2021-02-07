@@ -55,7 +55,7 @@ Course Exclusive
 - [x] 17. Random Person
 - [x] 18. Pagination
 - [x] 19. Stock Photos
-- [ ] 20. Dark Mode
+- [x] 20. Dark Mode
 - [ ] 21. Movie DB
 - [ ] 22. Hacker News
 - [ ] 23. Quiz

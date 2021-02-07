@@ -11,6 +11,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [photos, setPhotos] = useState([]);
   const [page, setPage] = useState(1);
+  const [query, setQuery] = useState("");
 
   const fetchImages = async() => {
     setLoading(true);
@@ -40,8 +41,7 @@ function App() {
       const scrollY = window.scrollY
       const bodyHeight = document.body.scrollHeight     
 
-      if(!loading && innerHeight + scrollY >= bodyHeight - 2) {
-        console.log(page);
+      if(!loading && innerHeight + scrollY >= bodyHeight - 2) {        
         setPage((oldPage) => {
           return oldPage + 1;
         })
@@ -60,7 +60,8 @@ function App() {
   return <main>
     <section className="search">
       <form className="search-form">
-        <input type="text" placeholder="search" className="form-input"/>
+        <input type="text" placeholder="search" className="form-input" value={query} onChange={(e)=> {
+          setQuery(e.target.value)}}/>
         <button type="submit" className="submit-btn" onClick={handleSubmit}>
           <FaSearch />
         </button>

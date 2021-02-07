@@ -41,7 +41,10 @@ function App() {
       const bodyHeight = document.body.scrollHeight     
 
       if(!loading && innerHeight + scrollY >= bodyHeight - 2) {
-        setPage(page + 1)
+        console.log(page);
+        setPage((oldPage) => {
+          return oldPage + 1;
+        })
       }
     });
     return () => {

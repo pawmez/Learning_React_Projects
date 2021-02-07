@@ -30,6 +30,21 @@ function App() {
     fetchImages();    
   }, [])
 
+  useEffect(() => {
+    const event = window.addEventListener('scroll',()=>{
+      const innerHeight = window.innerHeight
+      const scrollY = window.scrollY
+      const bodyHeight = document.body.scrollHeight     
+
+      if(!loading && innerHeight + scrollY >= bodyHeight - 2) {
+        console.log("it worked");
+      }
+    });
+    return () => {
+      window.removeEventListener('scroll', event)
+    }
+  }, [])
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("hello");

@@ -48,6 +48,7 @@ function App() {
 
   useEffect(() => {
     fetchImages();    
+    // eslint-disable-next-line
   }, [page])
 
   useEffect(() => {
@@ -58,13 +59,18 @@ function App() {
 
       if(!loading && innerHeight + scrollY >= bodyHeight - 2) {        
         setPage((oldPage) => {
+          if (oldPage === 0) {
+            return 2
+          } else {
           return oldPage + 1;
+          }
         })
-      }
-    });
+      }    
+    });    
     return () => {
       window.removeEventListener('scroll', event)
     }
+    // eslint-disable-next-line
   }, [])
 
   const handleSubmit = (e) => {

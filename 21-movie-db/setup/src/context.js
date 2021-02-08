@@ -35,6 +35,7 @@ const AppProvider = ({ children }) => {
     loading,
     error,
     movies,
+    query,
     setQuery
   }}>{children}</AppContext.Provider>
 }

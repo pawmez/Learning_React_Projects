@@ -5,12 +5,13 @@ import Home from './Home'
 import Movie from './SingleMovie'
 
 function App() {
-  return <Switch>
+  return (
+  <Switch>
     <Route path="/" exact>
         <Home /> 
     </Route>
     <Route path="/movies/:id" children={<Movie/>}/>
   </Switch>
-}
+)}
 
 export default App

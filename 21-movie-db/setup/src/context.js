@@ -31,7 +31,12 @@ const AppProvider = ({ children }) => {
     fetchMovies(`${API_ENDPOINT}&s=${query}`);
   }, [query])
 
-  return <AppContext.Provider value='hello'>{children}</AppContext.Provider>
+  return <AppContext.Provider value={{
+    loading,
+    error,
+    movies,
+    setQuery
+  }}>{children}</AppContext.Provider>
 }
 // make sure use
 export const useGlobalContext = () => {

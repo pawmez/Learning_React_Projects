@@ -14,7 +14,19 @@ const Movies = () => {
   }
   return <section className="movies">
     {movies.map((movie) => {
-      return <h4>movie</h4> 
+      const {imdbID:id, Poster:poster, Title:title, Year:year} = movie
+      // if (poster === 'N/A') {
+      //   return poster = url
+      // }
+      return <Link to={`/movies/${id}`} key={id} className="movie">
+        <article>
+          <img src={poster} alt={title}/>
+          <div className="movie-info">
+            <h4 className="title">{title}</h4>
+            <p>{year}</p>
+          </div>
+        </article>
+      </Link>
     })}
   </section>
 }

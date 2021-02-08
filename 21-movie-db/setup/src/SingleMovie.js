@@ -18,17 +18,29 @@ const fetchMovie = async (url) => {
       setLoading(false)
     } else {
       setError({show:true,msg:data.Error})
+      setLoading(false)
     }
     console.log(data);
   } catch(error) {
     console.log(error);
-  }
-  
+  }  
 }
 
 useEffect(() => {
   fetchMovie(`${API_ENDPOINT}&i=${id}`)
 }, [id])
+
+if(loading){
+  return <div className="loading"></div>
+}
+
+if(error.show === true){
+  return <div className="page-error">
+    <h1>{error.msg}</h1>
+    <Link to="/" className="btn">back to movies</Link>
+  </div>
+}
+const {Poster:poster,Title:title,Plot:plot,Year:year, imdbVotes, imdbRating} = movie
 
   return <h2>single movie</h2>
 }

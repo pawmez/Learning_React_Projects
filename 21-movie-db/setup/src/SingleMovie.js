@@ -5,8 +5,7 @@ import useFetch from './useFetch'
 
 const SingleMovie = () => {
   const {id} = useParams();
-  const {loading, error, data:movie} = useFetch(`&i=${id}`)
-  
+  const {loading, error, data:movie} = useFetch(`&i=${id}`)  
 
 if(loading){
   return <div className="loading"></div>

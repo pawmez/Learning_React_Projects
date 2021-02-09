@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 export const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`
 
-export const useFetch = () => {
+export const useFetch = (urlParams) => {
     const [loading, setLoading] = useState(true);
   const [error, setError] = useState({show:false,msg:''});
-  const [movies, setMovies] = useState([]);
+  const [data, setData] = useState(null);
   
 
   const fetchMovies = async (url) => {
@@ -14,7 +14,7 @@ export const useFetch = () => {
       const data = await response.json();
      
       if (data.Response === "True") {
-        setMovies(data.Search)
+        setData(data.Search)
         setError({show:false,msg:''})
       } else {
         setError({show:true,msg:data.Error})
@@ -25,4 +25,10 @@ export const useFetch = () => {
     }
   }
     
+  useEffect(() => {
+    fetchMovies(`${API_ENDPOINT}${urlParams}`);
+  }, [urlParams])
+  return {loading, error, data}
 }
+
+export default useFetch

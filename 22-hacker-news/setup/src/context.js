@@ -16,7 +16,7 @@ const initialState = {
   hits:[],
   query:'react',
   page:0,
-  nbPage:0
+  nbPages:0
 }
 
 const AppContext = React.createContext()
@@ -43,9 +43,8 @@ const AppProvider = ({ children }) => {
     dispatch({type:HANDLE_SEARCH,payload:query})
   }
 
-  const handlePage = (value) => {
-    console.log(value);
-    //dispatch({type:HANDLE_PAGE, payload:page})
+  const handlePage = (value) => {    
+    dispatch({type:HANDLE_PAGE, payload:value})
   }
 
   useEffect(() => {

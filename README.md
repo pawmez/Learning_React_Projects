@@ -57,5 +57,5 @@ Course Exclusive
 - [x] 19. Stock Photos
 - [x] 20. Dark Mode
 - [x] 21. Movie DB
-- [ ] 22. Hacker News
+- [x] 22. Hacker News
 - [ ] 23. Quiz

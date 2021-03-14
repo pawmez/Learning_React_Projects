@@ -15,8 +15,21 @@ function App() {
   }
   
   const {question, incorrect_answers, correct_answer} = questions[index];
-  const answers = [...incorrect_answers,correct_answer];
-
+  // const answers = [...incorrect_answers,correct_answer];
+  let answers = [...incorrect_answers]
+  const tempIndex = Math.floor(Math.random()*4)
+  console.log(tempIndex);
+  if(tempIndex === 3) {
+    answers.push(correct_answer)
+  } else if(tempIndex===0) {
+    answers.unshift(correct_answer)
+  } else {
+    // console.log("before:  " + answers);
+    answers.push(answers[tempIndex])
+    // console.log("middle:  " + answers);
+    answers[tempIndex] = correct_answer
+    // console.log("after:  " + answers);
+  }
 
   return <main>
     <Modal/>

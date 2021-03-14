@@ -9,9 +9,6 @@ const table = {
 
 const API_ENDPOINT = 'https://opentdb.com/api.php?'
 
-const url = ''
-const tempUrl = 'https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple'
-
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
@@ -34,8 +31,7 @@ const AppProvider = ({ children }) => {
     setWaiting(false);
     const response = await axios(url).catch((err) => console.log(err))
     if(response){
-      const data = response.data.results 
-      console.log(data);
+      const data = response.data.results       
       if(data.length > 0) {
         setQuestions(data);
         setLoading(false);
@@ -87,6 +83,9 @@ const AppProvider = ({ children }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const {amount, category, difficulty} = quiz;
+    const url = `${API_ENDPOINT}amount=${amount}&category=${table[category]}&difficulty=${difficulty}&type=multiple`    
+    fetchQuestions(url)
   }
 
   return <AppContext.Provider value={{

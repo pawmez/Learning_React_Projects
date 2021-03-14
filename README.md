@@ -58,4 +58,4 @@ Course Exclusive
 - [x] 20. Dark Mode
 - [x] 21. Movie DB
 - [x] 22. Hacker News
-- [ ] 23. Quiz
+- [x] 23. Quiz
